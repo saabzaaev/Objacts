@@ -1,15 +1,11 @@
 // Task-1
-let size =
-{
-  width: 4,
-  length: 2,
-  height: 2,
-};
+
 function multipling(size)
 {
-  return size.width * size.length * size.height
+  let {width , length , height} = size
+  return width * length * height
 }
-console.log(multipling(size));
+console.log(multipling({width: 4,length: 2,height: 2,}));
 
 // Task-2
 function procent(num)
@@ -25,28 +21,41 @@ return dividing
 console.log(procent(10000));
 
 // Task-3
-function helping(str)
-{
-    let femily =
-    {
-    "Darth Vader": "father",
-    "Leia": "sister",
-    "Han": "brother in law",
-    "R2D2": "droid"
-    }
-    return femily["Leia"]
+function getRelationToLuke(name) {
+  const relations = {
+      "Darth Vader": "father",
+      "Leia": "sister",
+      "Han": "brother in law",
+      "R2D2": "droid"
+  };
+
+  return relations[name] || "fraind";
 }
-console.log(helping("Leia"));
+console.log(getRelationToLuke("Leia"));
+
+// Example usage:
+console.log(getRelationToLuke("Darth Vader")); // Output: "father"
+console.log(getRelationToLuke("Leia")); // Output: "sister"
+console.log(getRelationToLuke("Han")); // Output: "brother in law"
+console.log(getRelationToLuke("R2D2")); // Output: "droid"
+console.log(getRelationToLuke("Yoda")); // Output: "friend"
+
 
 // Task-4
-function procent(num)
-{
-let dividing = 
-{
-    Needs: 0.5 * num,
-    Wants: 0.3* num,
-    Savings: 0.1 * num
+function cityFacts(city) {
+  const cityName = city.name;
+  const cityPopulation = city.population;
+  const cityContinent = city.continent;
+
+  return `${cityName} has a population of ${cityPopulation} and is situated in ${cityContinent}`;
 }
-return dividing
-}
-console.log(procent(10000));
+
+// Example usage:
+const cityData = {
+  name: "Tokyo",
+  population: "13,515,271",
+  continent: "Asia"
+};
+
+console.log(cityFacts(cityData)); // Output: Tokyo has a population of 13,515,271 and is situated in Asia
+
